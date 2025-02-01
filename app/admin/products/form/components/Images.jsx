@@ -4,6 +4,11 @@ export default function Images({data, setFeatureImage, featureImage, imageList, 
         <h1 className="font-semibold">Images</h1>
 
         <div className="flex flex-col gap-1">
+          {data?.featureImageURL && !featureImage && (
+            <div className="flex justify-center">
+               <img className="h-20 object-cover rounded-lg" src={data?.featureImageURL} alt="" />
+            </div>
+          )}
         {featureImage && (
           <div className="flex justify-center">
             <img className="h-20 object-cover rounded-lg" src={URL.createObjectURL(featureImage)} alt="" />
@@ -22,11 +27,24 @@ export default function Images({data, setFeatureImage, featureImage, imageList, 
               }
           }}
           className="border px-4 py-2 rounded-lg w-full outline-none"
-          required
+          // required
         />
       </div>
 
       <div className="flex flex-col gap-1">
+       {(imageList?.length === 0) && data?.imageList?.length != 0 && (
+          <div className="flex flex-wrap gap-3">
+            {data?.imageList?.map((item) => {
+              return (
+                <img 
+                 className="w-20 object-cover rounded-lg"
+                 src={item} 
+                 alt="" 
+                />
+              );
+            })}
+          </div>
+        )}
         {imageList?.length > 0 && (
           <div className="flex flex-wrap gap-3">
             {imageList?.map((item) => {
@@ -56,7 +74,7 @@ export default function Images({data, setFeatureImage, featureImage, imageList, 
               setImageList(newFiles); 
           }}
           className="border px-4 py-2 rounded-lg w-full outline-none"
-          required
+          // required
         />
       </div>
       </section>
