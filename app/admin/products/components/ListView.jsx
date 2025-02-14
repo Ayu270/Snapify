@@ -131,7 +131,10 @@ function Row({ item, index }) {
           <img className="h-10 w-10 object-cover" src={item?.featureImageURL} alt="" />
         </div>
       </td>
-      <td className="border-y bg-white px-3 py-2 whitespace-nowrap">{item?.title}</td>
+      <td className="border-y bg-white px-3 py-2 whitespace-nowrap">{item?.title}{" "}{item?.isFeatured === true && (
+        <span className="ml-2 bg-gradient-to-tr from-blue-500 to-indigo-400 text-white text-[10px] rounded-full px-3 py-1">Featured</span>
+        )}
+      </td>
       <td className="border-y bg-white px-3 py-2 whitespace-nowrap">
         {item?.salePrice < item?.price && (
           <span className="text-xs text-gray-500 line-through">
