@@ -27,11 +27,18 @@ export default function HeaderClientButtons() {
                  </Badge>
               </Link>
               <Link href={`/cart`}>
-                 <button 
-                  title="Cart"
-                  className="h-8 w-8 flex justify-center items-center rounded-full hover:bg-gray-100">
-                    <ShoppingCart size={14}/>
-                 </button>
+                <Badge 
+                    variant="solid"
+                    size="sm"
+                    className="text-white bg-red-500 text-[8px]"
+                    content={data?.carts?.length ?? 0}
+                    >
+                      <button 
+                         title="Cart"
+                         className="h-8 w-8 flex justify-center items-center rounded-full hover:bg-gray-100">
+                         <ShoppingCart size={14}/>
+                      </button>
+                    </Badge>
               </Link>
         </div>
     );

@@ -6,6 +6,7 @@ import { Heart } from "lucide-react";
 import Link from "next/link";
 import Slider from "react-slick";
 import FavoriteButton from "./FavoriteButton";
+import AddToCartButton from "./AddToCartButton";
 
 export default function FeaturedProductSlider({ featuredProducts }) {
   var settings = {
@@ -41,10 +42,14 @@ export default function FeaturedProductSlider({ featuredProducts }) {
                           </Link>
                         </div>
                         <div className="flex items-center gap-4">
-                           <Button className="bg-blue-500 text-white text-xs md:text-sm">BUY NOW</Button>
-                           <Button className="border-2 border-blue-500 bg-white text-blue-500 text-xs md:text-sm ">ADD TO CART</Button>
-                           <AuthContextProvider>
-                               <FavoriteButton productId={product?.id} />
+                          <AuthContextProvider>
+                             <Link href={`/checkout?type=buynow&productId=${product?.id}`}> 
+                                 <button className="bg-blue-500 text-white text-xs md:text-sm px-4 py-1.5 rounded-lg">
+                                    BUY NOW
+                                 </button>
+                             </Link>
+                             <AddToCartButton productId={product?.id} type={"large"}/>
+                             <FavoriteButton productId={product?.id} />
                            </AuthContextProvider>
                         </div>
                     </div>

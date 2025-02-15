@@ -133,6 +133,7 @@ import { Heart, ShoppingCart } from "lucide-react";
 import Link from "next/link";
 import FavoriteButton from "./FavoriteButton";
 import AuthContextProvider from "@/contexts/AuthContext";
+import AddToCartButton from "./AddToCartButton";
 
 export default function ProductsGridView({ products }) {
     const [visibleCount, setVisibleCount] = useState(20);
@@ -164,14 +165,10 @@ export function ProductCard({ product }) {
     return (
         <Card className="overflow-hidden shadow-md rounded-xl">
             <div className="relative w-full h-56">
+            <Link href={`/products/${product?.id}`}>
                 <img src={product?.featureImageURL} className="w-full h-full object-cover object-center" alt={product?.title} />
-                {/* <Button variant="ghost" size="icon" className="absolute top-2 right-2 rounded-full ">
-                    <Heart className="text-red-500" size={16} />
-                </Button> */}
+            </Link>
                 <div className="absolute top-2 right-2 ">
-                   {/* <Button variant="ghost" size="icon" className="rounded-full">
-                      <Heart className="text-red-500" size={16} />
-                   </Button> */}
                    <AuthContextProvider>
                       <FavoriteButton productId={product?.id} />
                    </AuthContextProvider>
@@ -192,10 +189,15 @@ export function ProductCard({ product }) {
                     </div>
                 </div>
                 <div className="flex gap-3 mt-2">
-                    <Button className="w-full">Buy Now</Button>
-                    <Button variant="outline" size="icon">
-                        <ShoppingCart size={16} />
-                    </Button>
+                    <div className="w-full">
+                      <Link href={`/checkout?type=buynow&productId=${product?.id}`}> 
+                         <button className="w-full bg-black text-white text-xs md:text-sm px-4 py-1.5 rounded-lg">Buy Now</button>
+                      </Link>
+                    </div>
+                    {/* <Button className="w-full">Buy Now</Button> */}
+                    <AuthContextProvider>
+                        <AddToCartButton productId={product?.id} />
+                    </AuthContextProvider>
                 </div>
             </CardContent>
         </Card>

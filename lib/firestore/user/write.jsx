@@ -12,3 +12,16 @@ export const updateFavorites = async ({ uid, list }) => {
       }
     );
   };
+
+
+  export const updateCarts = async ({ uid, list }) => {
+    await setDoc(
+      doc(db, `users/${uid}`),
+      {
+        carts: list,
+      },
+      {
+        merge: true,
+      }
+    );
+  };
