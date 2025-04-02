@@ -1,7 +1,7 @@
-"use client"
+"use client";
 
 import { useAuth } from "@/contexts/AuthContext";
-import { createCheckoutAndGetURL } from "@/lib/firestore/checkout/write";
+import { createCheckoutAndGetURL, createCheckoutCODAndGetId } from "@/lib/firestore/checkout/write";
 import { Button } from "@nextui-org/react";
 import confetti from "canvas-confetti";
 import { CheckSquare2Icon, Square } from "lucide-react";
@@ -15,7 +15,7 @@ export default function Checkout({ productList }) {
     const [paymentMode, setPaymentMode] = useState("prepaid");
     const [address, setAddress] = useState(null);
     const router = useRouter();
-    const {user} = useAuth();
+    const { user } = useAuth();
 
     const handleAddress = (key, value) => {
         setAddress({ ...(address ?? {}), [key]: value });
@@ -38,7 +38,7 @@ export default function Checkout({ productList }) {
               if (!productList || productList?.length === 0) {
                 throw new Error("Product List Is Empty");
               }
-              await new Promise((res) => setTimeout(res, 3000));
+              // await new Promise((res) => setTimeout(res, 3000));
             // Create API to place orderrrr mood nahi hai abhiiiii
 
             if (paymentMode === "prepaid") {
@@ -49,16 +49,22 @@ export default function Checkout({ productList }) {
                 });
                 router.push(url);
             } else {
-                // call api to create order with cod
-            }
-              // toast.success("Successfully Placed!");
-              // confetti();
-              // router.push('/account');
+              const checkoutId = await createCheckoutCODAndGetId({
+                uid: user?.uid,
+                products: productList,
+                address: address,
+              });
+              //console.log(checkoutId);
+              router.push(`/checkout-cod?checkout_id=${checkoutId}`);
+              window.location.href = `/checkout-cod?checkout_id=${checkoutId}`;
+              toast.success("Successfully Placed!");
+              confetti();
+          }
         } catch (error) {
             toast.error(error?.message);
         }
         setIsLoading(false);
-    }
+    };
 
     return (
         <section className="flex flex-col md:flex-row gap-3">
