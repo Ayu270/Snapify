@@ -27,10 +27,9 @@ export function useUser({ uid }) {
   return { data, error: error?.message, isLoading: data === undefined };
 }
 
-// add
 export function useUsers() {
   const { data, error } = useSWRSubscription(["users"], ([path], { next }) => {
-    const q = query(collection(db, path), orderBy("timestampCreate", "desc"));
+    const q = collection(db, path);
     const unsub = onSnapshot(
       q,
       (snapshot) =>
