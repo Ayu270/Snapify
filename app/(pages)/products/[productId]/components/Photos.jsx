@@ -118,7 +118,7 @@ export default function Photos({ imageList }) {
         <div className="fixed inset-0 bg-black bg-opacity-75 flex justify-center items-center z-50">
           <div className="relative flex bg-transparent p-6 max-w-[95vw] w-full gap-6">
             <button
-              className="absolute top-3 right-3 text-3xl cursor-pointer text-white z-10"
+              className="absolute top-3 right-3 text-4xl cursor-pointer text-white z-10"
               onClick={closeZoomPopup}
             >
               ✕

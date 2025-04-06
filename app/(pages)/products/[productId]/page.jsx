@@ -3,6 +3,8 @@ import Photos from "./components/Photos";
 import Details from "./components/Details";
 import Reviews from "./components/Reviews";
 import RelatedProducts from "./components/RelatedProducts";
+import AddReview from "./components/AddReview";
+import AuthContextProvider from "@/contexts/AuthContext";
 
 export default async function Page({ params}) {
     const { productId } = params;
@@ -14,8 +16,17 @@ export default async function Page({ params}) {
                 <Photos imageList={[product?.featureImageURL, ...(product?.imageList ?? [])]}/>
                 <Details product={product} />
             </section>
-            {/* Description, Reviews */}
-                <Reviews productId={productId}/>
+            {/* Description, Reviews 865px */}
+            <div className="flex justify-center py-10">
+                <AuthContextProvider>
+                <div className="flex flex-col md:flex-row gap-4 md:max-w-[900px] w-full">
+                    <div className="w-full">
+                      <AddReview productId={productId} />
+                    </div>
+                    <Reviews productId={productId}/>
+                </div>
+                </AuthContextProvider>
+            </div>    
             {/* Related Product */}
                 <RelatedProducts categoryId={product?.categoryId}/>
         </main>
