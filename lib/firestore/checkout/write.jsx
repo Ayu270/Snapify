@@ -86,49 +86,6 @@ export const createCheckoutAndGetURL = async ({ uid, products, address }) => {
     }
 };
 
-// export const createCheckoutCODAndGetId = async ({ uid, products, address }) => {
-//   const checkoutId = `cod_${doc(collection(db, `ids`)).id}`;
-
-//   const ref = doc(db, `users/${uid}/checkout_sessions_cod/${checkoutId}`);
-
-//   let line_items = [];
-
-//   products.forEach((item) => {
-//     line_items.push({
-//       price_data: {
-//         currency: "inr",
-//         product_data: {
-//           name: item?.product?.title ?? "",
-//           description: item?.product?.shortDescription ?? "",
-//           images: [
-//             item?.product?.featureImageURL ??
-//               `${process.env.NEXT_PUBLIC_DOMAIN}/logo.png`,
-//           ],
-//           metadata: {
-//             productId: item?.id,
-//           },
-//         },
-//         unit_amount: item?.product?.salePrice * 100,
-//       },
-//       quantity: item?.quantity ?? 1,
-//     });
-//   });
-
-//   await setDoc(ref, {
-//     id: checkoutId,
-//     line_items: line_items,
-//     metadata: {
-//       checkoutId: checkoutId,
-//       uid: uid,
-//       address: JSON.stringify(address),
-//     },
-//     createdAt: Timestamp.now(),
-//   });
-
-//   return checkoutId;
-// };
-
-
 export const createCheckoutCODAndGetId = async ({ uid, products, address }) => {
   const checkoutId = `cod_${doc(collection(db, `ids`)).id}`;
 

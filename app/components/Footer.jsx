@@ -52,7 +52,7 @@ export default function Footer() {
                     <div className="flex-1 flex flex-col md:flex-row justify-end gap-4">
                         <div className="flex gap-2 items-center">
                             <Phone size={12} className="text-black" />
-                            <h2 className="text-sm text-gray-600">+91 910 XXXXXXX</h2>
+                            <h2 className="text-sm text-gray-600">+91 999 XXXXXXX</h2>
                         </div>
                         <div className="flex gap-2 items-center">
                             <Mail size={12} className="text-black" />
@@ -60,7 +60,7 @@ export default function Footer() {
                         </div>
                         <div className="flex gap-2 items-center">
                             <MapPin size={12} className="text-black" />
-                            <h2 className="text-sm text-gray-600">Jaipur</h2>
+                            <h2 className="text-sm text-gray-600">India</h2>
                         </div>
                     </div>
                 </div>

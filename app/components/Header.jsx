@@ -3,6 +3,7 @@ import Link from "next/link";
 import LogoutButton from "./LogoutButton";
 import AuthContextProvider from "@/contexts/AuthContext";
 import HeaderClientButtons from "./HeaderClientButtons";
+import AdminButton from "./AdminButton";
 
 export default function Header(){
     const menulist = [
@@ -21,7 +22,6 @@ export default function Header(){
     ];
     return(
        <nav className="sticky top-0 z-50 bg-white bg-opacity-65 backdrop-blur-2xl py-3 px-4 md:py-4 md:px-16 border-b flex items-center justify-between">
-          {/* <img className="h-5 md:h-9" src="/logo.png" alt=""/> */}
           <Link href={"/"}>
                   <img className="h-4 md:h-8" src="/logo.png" alt="Snapify Logo" />
           </Link>
@@ -40,6 +40,9 @@ export default function Header(){
             </button>
           </Link> */}
           <div className="flex items-center gap-1">
+              <AuthContextProvider>
+                 <AdminButton />
+              </AuthContextProvider>
               <Link href={`/search`}>
                  <button 
                   title="Search"

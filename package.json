@@ -23,6 +23,7 @@
     "framer-motion": "^11.17.0",
     "lucide-react": "^0.471.2",
     "next": "15.1.4",
+    "number-to-words": "^1.2.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-hot-toast": "^2.5.1",

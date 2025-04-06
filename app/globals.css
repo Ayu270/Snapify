@@ -64,3 +64,35 @@
     @apply bg-background text-foreground;
   }
 }
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+
+  body {
+    background: white !important;
+  }
+
+  .print-invoice {
+    font-family: 'Arial', sans-serif;
+    font-size: 11px;
+    color: #000;
+  }
+
+  table {
+    border-collapse: collapse;
+  }
+
+  th, td {
+    border: 1px solid #000;
+  }
+}
+
+.print-only {
+  display: none;
+}

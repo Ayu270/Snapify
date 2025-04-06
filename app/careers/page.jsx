@@ -36,7 +36,7 @@ export default function Careers() {
 
             {/* Open Positions */}
             <div className="max-w-4xl w-full mt-16">
-                <h2 className="text-3xl font-semibold text-gray-800 text-center mb-6">📌 Open Positions</h2>
+                <h2 className="text-3xl font-semibold text-gray-800 text-center mb-6">Open Positions</h2>
 
                 <div className="space-y-4">
                     {[

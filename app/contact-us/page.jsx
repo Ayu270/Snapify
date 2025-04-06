@@ -13,16 +13,16 @@ export default function ContactUs() {
                 
                 <div className="space-y-4">
                     <div className="flex items-center space-x-3">
-                        <Phone size={20} className="text-blue-500" />
-                        <span className="text-gray-700">+91 910 XXXXXXX</span>
+                        <Phone size={20} className="text-black" />
+                        <span className="text-gray-700">+91 999 XXXXXXX</span>
                     </div>
                     <div className="flex items-center space-x-3">
-                        <Mail size={20} className="text-blue-500" />
+                        <Mail size={20} className="text-black" />
                         <span className="text-gray-700">krayush266@gmail.com</span>
                     </div>
                     <div className="flex items-center space-x-3">
-                        <MapPin size={20} className="text-blue-500" />
-                        <span className="text-gray-700">Jaipur, India</span>
+                        <MapPin size={20} className="text-black" />
+                        <span className="text-gray-700">India</span>
                     </div>
                 </div>
 
@@ -30,7 +30,7 @@ export default function ContactUs() {
                     <input type="text" placeholder="Your Name" className="w-full p-3 border rounded-lg" />
                     <input type="email" placeholder="Your Email" className="w-full p-3 border rounded-lg" />
                     <textarea placeholder="Your Message" className="w-full p-3 border rounded-lg h-32"></textarea>
-                    <button type="submit" className="w-full bg-blue-500 text-white p-3 rounded-lg hover:bg-blue-600">
+                    <button type="submit" className="w-full bg-black text-white p-3 rounded-lg">
                         Send Message
                     </button>
                 </form>
