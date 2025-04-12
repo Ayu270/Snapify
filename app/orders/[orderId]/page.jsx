@@ -192,8 +192,8 @@ export default function OrderDetails() {
             <p>Snapify India</p>
             <p>NEW DELHI, DELHI, 110002, IN</p>
             <br />
-            <p><strong>PAN No:</strong> ATDPS2712F</p>
-            <p><strong>GST Registration No:</strong> 07ATDPS2712F2ZV</p>
+            <p><strong>PAN No:</strong> ATDPS2112</p>
+            <p><strong>GST Registration No:</strong> 07VGU492308723V</p>
           </div>
           <div className="text-right">
             <h3 className="font-semibold mb-1">Shipping Address :</h3>
