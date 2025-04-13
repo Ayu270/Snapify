@@ -53,7 +53,7 @@ export default function Checkout({ productList }) {
                 address: address,
               });
               router.push(`/checkout-cod?checkout_id=${checkoutId}`);
-              window.location.href = `/checkout-cod?checkout_id=${checkoutId}`;
+      
               toast.success("Successfully Placed!");
               confetti();
           }
