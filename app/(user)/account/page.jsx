@@ -49,7 +49,6 @@ export default function Page() {
             >
               <Card className="transition-shadow hover:shadow-lg cursor-pointer">
                 <CardContent className="p-5 space-y-4">
-                  {/* Order Header */}
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                     <div className="flex flex-wrap items-center gap-2 text-sm">
                       <span className="font-semibold">Order #{orderIndex + 1}</span>
@@ -64,8 +63,6 @@ export default function Page() {
                       {item?.timestampCreate?.toDate()?.toLocaleString()}
                     </div>
                   </div>
-
-                  {/* Order Items */}
                   <div className="space-y-3">
                     {item?.checkout?.line_items?.map((product, i) => (
                       <div key={i} className="flex items-center gap-4">
@@ -83,8 +80,6 @@ export default function Page() {
                       </div>
                     ))}
                   </div>
-
-                  {/* Total */}
                   <div className="text-right font-semibold text-lg text-green-600">
                     Total: ₹{totalAmount.toFixed(2)}
                   </div>

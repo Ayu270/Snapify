@@ -2,6 +2,11 @@ import { ShieldCheck, Lock, UserCheck, AlertTriangle, Globe, CheckCircle } from 
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
+export const metadata = {
+    title: "Snapify | Security",
+    description: "Created by Ayush",
+};
+
 const securityData = [
     {
         title: "Data Encryption",
@@ -40,15 +45,12 @@ export default function Security() {
         <div>
             <Header/>
             <div className="min-h-screen bg-gray-50 p-6">
-            {/* Hero Section */}
             <div className="max-w-4xl mx-auto text-center">
                 <h1 className="text-4xl font-bold text-gray-900">Security</h1>
                 <p className="text-lg text-gray-600 mt-2">
                     Your safety is our top priority. We implement advanced security measures to protect your data and transactions.
                 </p>
             </div>
-
-            {/* Security Features */}
             <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
                 {securityData.map((item, index) => (
                     <div key={index} className="bg-white p-5 rounded-lg shadow-md flex items-start space-x-4">
@@ -60,8 +62,6 @@ export default function Security() {
                     </div>
                 ))}
             </div>
-
-            {/* More Info */}
             <div className="max-w-4xl mx-auto text-center mt-12">
                 <h2 className="text-xl font-semibold text-gray-800">Need Help?</h2>
                 <p className="text-gray-600 mt-1">

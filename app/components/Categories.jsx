@@ -1,18 +1,9 @@
 "use client"
 
-import { Button } from "@nextui-org/react";
-import { Heart } from "lucide-react";
 import Link from "next/link";
 import Slider from "react-slick";
 
 export default function Categories({ categories }) {
-  // var settings = {
-  //   dots: true,
-  //   infinite: false,
-  //   speed: 500,
-  //   slidesToShow: 5,
-  //   slidesToScroll: 5,
-  // };
   var settings = {
     dots: true,
     infinite: false,

@@ -34,11 +34,6 @@ export default function Header(){
               );
             })}
           </div>
-          {/* <Link href={"/login"}>
-            <button className="bg-blue-600 px-5 font-bold py-2 rounded-full text-white">
-                Login
-            </button>
-          </Link> */}
           <div className="flex items-center gap-1">
               <AuthContextProvider>
                  <AdminButton />

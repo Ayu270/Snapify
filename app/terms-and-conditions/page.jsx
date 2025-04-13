@@ -1,23 +1,23 @@
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 
+export const metadata = {
+    title: "Snapify | Terms & Conditions",
+    description: "Created by Ayush",
+};
+
 export default function TermsAndConditions() {
     return (
         <div>
             <Header />
             <div className="min-h-screen bg-gray-50 p-6">
-            {/* Hero Section */}
             <div className="max-w-4xl mx-auto text-center">
                 <h1 className="text-4xl font-bold text-gray-900">Terms & Conditions</h1>
                 <p className="text-lg text-gray-600 mt-2">
                     Please read these terms and conditions carefully before using Snapify.
                 </p>
             </div>
-
-            {/* Terms Content */}
             <div className="max-w-5xl mx-auto bg-white p-6 rounded-lg shadow-md mt-8 space-y-6">
-                
-                {/* 1. Introduction */}
                 <section>
                     <h2 className="text-xl font-semibold text-gray-800">1. Introduction</h2>
                     <p className="text-gray-600 text-sm mt-1">
@@ -25,8 +25,6 @@ export default function TermsAndConditions() {
                         If you do not agree, you may not use our services.
                     </p>
                 </section>
-
-                {/* 2. User Accounts */}
                 <section>
                     <h2 className="text-xl font-semibold text-gray-800">2. User Accounts</h2>
                     <p className="text-gray-600 text-sm mt-1">
@@ -35,8 +33,6 @@ export default function TermsAndConditions() {
                         - Any unauthorized activity on your account must be reported immediately.
                     </p>
                 </section>
-
-                {/* 3. Purchases & Payments */}
                 <section>
                     <h2 className="text-xl font-semibold text-gray-800">3. Purchases & Payments</h2>
                     <p className="text-gray-600 text-sm mt-1">
@@ -45,8 +41,6 @@ export default function TermsAndConditions() {
                         - We accept multiple payment methods including Visa, Mastercard, and digital wallets.
                     </p>
                 </section>
-
-                {/* 4. Prohibited Activities */}
                 <section>
                     <h2 className="text-xl font-semibold text-gray-800">4. Prohibited Activities</h2>
                     <p className="text-gray-600 text-sm mt-1">
@@ -55,8 +49,6 @@ export default function TermsAndConditions() {
                         - Any violation may result in account termination.
                     </p>
                 </section>
-
-                {/* 5. Liability Disclaimer */}
                 <section>
                     <h2 className="text-xl font-semibold text-gray-800">5. Liability Disclaimer</h2>
                     <p className="text-gray-600 text-sm mt-1">
@@ -65,8 +57,6 @@ export default function TermsAndConditions() {
                         - Users agree to use our services at their own risk.
                     </p>
                 </section>
-
-                {/* 6. Changes to Terms */}
                 <section>
                     <h2 className="text-xl font-semibold text-gray-800">6. Changes to Terms</h2>
                     <p className="text-gray-600 text-sm mt-1">
@@ -75,8 +65,6 @@ export default function TermsAndConditions() {
                         - Continued use of Snapify after updates implies acceptance of the new terms.
                     </p>
                 </section>
-
-                {/* Contact Info */}
                 <section>
                     <h2 className="text-xl font-semibold text-gray-800">Need Assistance?</h2>
                     <p className="text-gray-600 text-sm mt-1">

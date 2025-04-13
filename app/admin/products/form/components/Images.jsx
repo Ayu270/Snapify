@@ -27,7 +27,6 @@ export default function Images({data, setFeatureImage, featureImage, imageList, 
               }
           }}
           className="border px-4 py-2 rounded-lg w-full outline-none"
-          // required
         />
       </div>
 
@@ -74,7 +73,6 @@ export default function Images({data, setFeatureImage, featureImage, imageList, 
               setImageList(newFiles); 
           }}
           className="border px-4 py-2 rounded-lg w-full outline-none"
-          // required
         />
       </div>
       </section>

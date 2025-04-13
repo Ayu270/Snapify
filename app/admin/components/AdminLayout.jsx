@@ -9,6 +9,7 @@ import { useAdmin } from "@/lib/firestore/admins/read";
 import { Button, CircularProgress } from "@nextui-org/react";
 import { signOut } from "firebase/auth";
 import { auth } from "@/lib/firebase";
+import Link from "next/link";
 
 export default function AdminLayout({children}){
     const [isOpen, setIsOpen] = useState(false);
@@ -58,9 +59,9 @@ export default function AdminLayout({children}){
     if(!admin){
       return (
         <div className="h-screen w-screen flex flex-col gap-2 justify-center items-center">
-           <h1 className="font-bold text-large">You are not admin!</h1>
+           <h1 className="text-red-600 font-bold text-large">You are not admin!</h1>
            <h1 className="text-gray-600 text-sm">{user?.email}</h1>
-           <h2 className="text-gray-600">If you need access, you can request it by emailing krayush265@gmail.com</h2>
+           <h2 className="text-gray-600">If you need access, <Link href="/contact-us"><span className="text-blue-600 hover:underline">Contact Us</span></Link></h2>
            <Button
               onClick={async () => {
                 await signOut(auth);

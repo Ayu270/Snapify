@@ -3,6 +3,11 @@ import { Truck, Package, MapPin, HelpCircle, Headset } from "lucide-react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
+export const metadata = {
+    title: "Snapify | Shipping",
+    description: "Created by Ayush",
+};
+
 const shippingInfo = [
     { 
         title: "Fast & Reliable Shipping", 
@@ -42,15 +47,12 @@ export default function Shipping() {
         <div>
             <Header/>
             <div className="min-h-screen bg-gray-50 p-6">
-            {/* Hero Section */}
             <div className="max-w-4xl mx-auto text-center">
                 <h1 className="text-5xl font-bold text-gray-800">Shipping Information</h1>
                 <p className="text-lg text-gray-600 mt-2">
                     We ensure fast, safe, and reliable delivery of your orders.
                 </p>
             </div>
-
-            {/* Shipping Info */}
             <div className="max-w-5xl mx-auto mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                 {shippingInfo.map((item, index) => (
                     <div key={index} className="bg-white p-6 rounded-xl shadow-md flex flex-col items-center text-center">
@@ -68,8 +70,6 @@ export default function Shipping() {
                     </div>
                 ))}
             </div>
-
-            {/* Delivery Partners */}
             <div className="max-w-4xl mx-auto mt-16 text-center">
                 <h2 className="text-3xl font-semibold text-gray-800 mb-6">Our Trusted Delivery Partners</h2>
                 <div className="flex flex-wrap justify-center gap-6">
@@ -80,8 +80,6 @@ export default function Shipping() {
                     ))}
                 </div>
             </div>
-
-            {/* FAQ Section */}
             <div className="max-w-4xl mx-auto mt-16">
                 <h2 className="text-3xl font-semibold text-gray-800 text-center mb-6">Shipping FAQs</h2>
                 <div className="space-y-4">
@@ -96,8 +94,6 @@ export default function Shipping() {
                     ))}
                 </div>
             </div>
-
-            {/* Support Section */}
             <div className="mt-12 text-center">
                 <h3 className="text-lg text-gray-700">Need Help with Shipping?</h3>
                 <a href="/contact-us" className="bg-black text-white px-6 py-3 rounded-lg text-lg font-medium hover:bg-black transition mt-4 inline-block">

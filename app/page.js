@@ -12,12 +12,6 @@ import { getBrands } from "@/lib/firestore/brands/read_server";
 import Footer from "./components/Footer";
 
 export default async function Home() {
-  // const featuredProducts = await getFeaturedProducts();
-  // const collections = await getCollections();
-  // const categories = await getCategories();
-  // const products = await getProducts();
-  // const brands = await getBrands();
-
   const [featuredProducts, collections, categories, products, brands] =
     await Promise.all([
       getFeaturedProducts(),

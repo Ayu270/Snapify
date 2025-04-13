@@ -2,12 +2,16 @@ import { Headset } from "lucide-react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
+export const metadata = {
+    title: "Snapify | Terms of Use",
+    description: "Created by Ayush",
+};
+
 export default function TermsOfUse() {
     return (
         <div>
             <Header/>
             <div className="min-h-screen bg-white p-6 text-gray-800">
-            {/* Hero Section */}
             <div className="max-w-5xl mx-auto">
                 <h1 className="text-4xl font-bold text-gray-900">Terms of Use</h1>
                 <p className="text-sm text-gray-600 mt-2">Last Updated: February 2025</p>
@@ -17,10 +21,7 @@ export default function TermsOfUse() {
                 </p>
                 <hr className="my-6 border-gray-300" />
             </div>
-
-            {/* Terms Content */}
             <div className="max-w-5xl mx-auto space-y-8">
-                {/* Section 1 */}
                 <div>
                     <h2 className="text-2xl font-semibold mb-2">1. Acceptance of Terms</h2>
                     <p className="text-md">
@@ -28,8 +29,6 @@ export default function TermsOfUse() {
                         agree, please discontinue use of our services.
                     </p>
                 </div>
-
-                {/* Section 2 */}
                 <div>
                     <h2 className="text-2xl font-semibold mb-2">2. User Accounts & Responsibilities</h2>
                     <p className="text-md">
@@ -37,8 +36,6 @@ export default function TermsOfUse() {
                         account are your responsibility. If you suspect unauthorized use, notify us immediately.
                     </p>
                 </div>
-
-                {/* Section 3 */}
                 <div>
                     <h2 className="text-2xl font-semibold mb-2">3. Intellectual Property Rights</h2>
                     <p className="text-md">
@@ -46,8 +43,6 @@ export default function TermsOfUse() {
                         copyright laws. You may not copy, reproduce, or distribute any content without our permission.
                     </p>
                 </div>
-
-                {/* Section 4 */}
                 <div>
                     <h2 className="text-2xl font-semibold mb-2">4. Prohibited Activities</h2>
                     <p className="text-md">
@@ -55,8 +50,6 @@ export default function TermsOfUse() {
                         violates applicable laws or harms Snapify or other users.
                     </p>
                 </div>
-
-                {/* Section 5 */}
                 <div>
                     <h2 className="text-2xl font-semibold mb-2">5. Limitation of Liability</h2>
                     <p className="text-md">
@@ -64,8 +57,6 @@ export default function TermsOfUse() {
                         including but not limited to lost profits or service interruptions.
                     </p>
                 </div>
-
-                {/* Section 6 */}
                 <div>
                     <h2 className="text-2xl font-semibold mb-2">6. Changes to Terms</h2>
                     <p className="text-md">
@@ -73,8 +64,6 @@ export default function TermsOfUse() {
                         continued use of our services implies acceptance of the updated terms.
                     </p>
                 </div>
-
-                {/* Contact Section */}
                 <div>
                     <h2 className="text-2xl font-semibold mb-2">7. Contact Information</h2>
                     <p className="text-md">
@@ -83,8 +72,6 @@ export default function TermsOfUse() {
                     </p>
                 </div>
             </div>
-
-            {/* Support Section */}
             <div className="mt-12 text-center">
                 <h3 className="text-lg text-gray-700">Need Help?</h3>
                 <a href="/contact-us" className="bg-black text-white px-6 py-3 rounded-lg text-lg font-medium hover:bg-black transition mt-4 inline-block">
@@ -96,4 +83,3 @@ export default function TermsOfUse() {
         </div>
     );
 }
-

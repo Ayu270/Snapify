@@ -29,7 +29,6 @@ export default function Page() {
          await signInWithEmailAndPassword(auth, data?.email, data?.password);
          toast.success("Logged In Successfully");
       } catch (error) {
-         //toast.error(error.message);
          toast.error("Please Check Your Email and Password");
       }
       setIsLoading(false);

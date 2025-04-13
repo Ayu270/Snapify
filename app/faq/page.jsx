@@ -38,15 +38,12 @@ export default function FAQ() {
         <div>
             <Header/>
             <div className="min-h-screen bg-gray-50 p-6">
-            {/* Hero Section */}
             <div className="max-w-4xl mx-auto text-center">
                 <h1 className="text-5xl font-bold text-gray-800">Frequently Asked Questions</h1>
                 <p className="text-lg text-gray-600 mt-2">
                     Find answers to common queries below.
                 </p>
             </div>
-
-            {/* FAQ List */}
             <div className="max-w-3xl mx-auto mt-12 space-y-4">
                 {faqData.map((faq, index) => (
                     <div 
@@ -71,8 +68,6 @@ export default function FAQ() {
                     </div>
                 ))}
             </div>
-
-            {/* Support Section */}
             <div className="mt-12 text-center">
                 <h3 className="text-lg text-gray-700">Still have questions?</h3>
                 <a href="/contact-us" className="bg-black text-white px-6 py-3 rounded-lg text-lg font-medium hover:bg-black transition mt-4 inline-block">

@@ -1,30 +1,3 @@
-// import { ProductCard } from "@/app/components/Products";
-// import { getCollection } from "@/lib/firestore/collections/read_server";
-// import { getProduct } from "@/lib/firestore/products/read_server";
-
-// export default async function Page({ params }) {
-//     const { collectionId } = params;
-//     const collection = await getCollection({ id: collectionId });
-//     return(
-//         <main className="flex justify-center p-5 md:px-10 md:py-5 w-full">
-//                   <div className="max-w-7xl w-full">
-//                      <h1 className="text-center font-semibold text-4xl p-4">{collection.title}</h1>
-//                      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-//                         {collection?.products?.map((productId) => {
-//                         return <Product productId={productId} key={productId} /> ;
-//                         })}
-//                      </div>
-//                   </div>
-//               </main>  
-//     );  
-// }
-
-// async function Product({ productId }) {
-//     const product = await getProduct({ id: productId });
-//     return <ProductCard product={item}/>;
-// }
-
-
 import { ProductCard } from "@/app/components/Products";
 import { getCollection } from "@/lib/firestore/collections/read_server";
 import { getProduct } from "@/lib/firestore/products/read_server";

@@ -1,15 +1,10 @@
 "use client";
 
 import { useAllOrders } from "@/lib/firestore/orders/read";
-import { useProducts } from "@/lib/firestore/products/read";
-import { deleteProduct } from "@/lib/firestore/products/write";
 import { useUser } from "@/lib/firestore/user/read";
 import { Avatar, Button, CircularProgress } from "@nextui-org/react";
-import { Edit2, Trash2 } from "lucide-react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import toast from "react-hot-toast";
 
 export default function ListView() {
   const [pageLimit, setPageLimit] = useState(8);

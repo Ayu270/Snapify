@@ -1,6 +1,5 @@
 "use client";
 
-import { AiOutlineGoogle } from "react-icons/ai";
 import { Button, Link } from "@nextui-org/react";
 import toast from "react-hot-toast";
 import { createUserWithEmailAndPassword, GoogleAuthProvider, sendPasswordResetEmail, signInWithPopup, updateProfile } from "firebase/auth";
@@ -8,8 +7,6 @@ import { auth } from "@/lib/firebase";
 import { useEffect, useState } from "react";
 import { useAuth } from "@/contexts/AuthContext";
 import { useRouter } from "next/navigation";
-import { create } from "canvas-confetti";
-import { createUser } from "@/lib/firestore/user/write";
 
 export default function Page() {
   const {user} = useAuth();

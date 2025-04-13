@@ -38,8 +38,6 @@ export default function Checkout({ productList }) {
               if (!productList || productList?.length === 0) {
                 throw new Error("Product List Is Empty");
               }
-              // await new Promise((res) => setTimeout(res, 3000));
-            // Create API to place orderrrr mood nahi hai abhiiiii
 
             if (paymentMode === "prepaid") {
                 const url = await createCheckoutAndGetURL({
@@ -54,7 +52,6 @@ export default function Checkout({ productList }) {
                 products: productList,
                 address: address,
               });
-              //console.log(checkoutId);
               router.push(`/checkout-cod?checkout_id=${checkoutId}`);
               window.location.href = `/checkout-cod?checkout_id=${checkoutId}`;
               toast.success("Successfully Placed!");

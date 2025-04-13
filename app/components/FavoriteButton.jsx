@@ -4,7 +4,6 @@ import { useAuth } from "@/contexts/AuthContext";
 import { useUser } from "@/lib/firestore/user/read";
 import { updateFavorites } from "@/lib/firestore/user/write";
 import { Button } from "@nextui-org/react";
-// import { Heart } from "lucide-react";
 import { useState } from "react";
 import toast from "react-hot-toast";
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';

@@ -2,20 +2,22 @@ import { Briefcase, Globe, Users, Rocket, CheckCircle } from "lucide-react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
+export const metadata = {
+    title: "Snapify | Careers",
+    description: "Created by Ayush",
+};
+
 export default function Careers() {
     return (
         <div>
             <Header/>
             <div className="min-h-screen bg-gray-50 flex flex-col items-center p-6">
-            {/* Header Section */}
             <div className="max-w-4xl text-center">
                 <h1 className="text-5xl font-bold text-gray-800 mb-4">Join Snapify</h1>
                 <p className="text-lg text-gray-600">
                     Be part of a dynamic, fast-growing team shaping the future of e-commerce.
                 </p>
             </div>
-
-            {/* Why Work With Us Section */}
             <div className="max-w-5xl mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {[
                     { icon: <Rocket size={32} className="text-blue-500" />, title: "Career Growth", desc: "We invest in your learning and provide opportunities to advance." },
@@ -33,8 +35,6 @@ export default function Careers() {
                     </div>
                 ))}
             </div>
-
-            {/* Open Positions */}
             <div className="max-w-4xl w-full mt-16">
                 <h2 className="text-3xl font-semibold text-gray-800 text-center mb-6">Open Positions</h2>
 
@@ -55,8 +55,6 @@ export default function Careers() {
                     ))}
                 </div>
             </div>
-
-            {/* CTA Button */}
             <div className="mt-12">
                 <a href="/apply" className="bg-black text-white px-6 py-3 rounded-lg text-lg font-medium hover:bg-black transition">
                     Explore Careers

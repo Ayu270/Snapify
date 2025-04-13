@@ -2,6 +2,11 @@ import { ShieldCheck, Lock, EyeOff, UserCheck, FileText, Globe, Headset } from "
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
+export const metadata = {
+    title: "Snapify | Privacy Policy",
+    description: "Created by Ayush",
+};
+
 const privacySections = [
     {
         title: "Data Security",
@@ -40,15 +45,12 @@ export default function Privacy() {
         <div>
             <Header/>
             <div className="min-h-screen bg-gray-50 p-6">
-            {/* Hero Section */}
             <div className="max-w-4xl mx-auto text-center">
                 <h1 className="text-4xl font-bold text-gray-900">Privacy Policy</h1>
                 <p className="text-lg text-gray-600 mt-2">
                     We are committed to protecting your personal data and ensuring transparency in how we handle it.
                 </p>
             </div>
-
-            {/* Privacy Features */}
             <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
                 {privacySections.map((item, index) => (
                     <div key={index} className="bg-white p-5 rounded-lg shadow-md flex items-start space-x-4">
@@ -60,8 +62,6 @@ export default function Privacy() {
                     </div>
                 ))}
             </div>
-
-            {/* More Info */}
             <div className="max-w-4xl mx-auto text-center mt-12">
                 <h2 className="text-xl font-semibold text-gray-800">Need Assistance?</h2>
                 <p className="text-gray-600 mt-1">
@@ -69,8 +69,6 @@ export default function Privacy() {
                     <a href="mailto:privacy@snapify.com" className="text-blue-600 hover:underline"> privacy@snapify.com</a>.
                 </p>
             </div>
-            
-            {/* Support Section */}
             <div className="mt-12 text-center">
                 <a href="/contact-us" className="bg-black text-white px-6 py-3 rounded-lg text-lg font-medium hover:bg-black transition mt-4 inline-block">
                     <Headset size={20} className="inline mr-2" /> Contact Support

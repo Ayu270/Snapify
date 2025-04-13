@@ -2,6 +2,13 @@ import { ProductCard } from "@/app/components/Products";
 import { algoliasearch } from "algoliasearch";
 import SearchBox from "./components/SearchBox";
 
+
+export const metadata = {
+    title: "Snapify | Search",
+    description: "Created by Ayush",
+};
+
+
 const getProducts = async (text) => {
     if(!text) {
         return [];

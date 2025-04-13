@@ -2,6 +2,11 @@ import { RefreshCw, XCircle, DollarSign, HelpCircle, Headset } from "lucide-reac
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
+export const metadata = {
+    title: "Snapify | Cancellation & Returns",
+    description: "Created by Ayush",
+};
+
 const policies = [
     { 
         title: "Cancellation Policy", 
@@ -35,15 +40,12 @@ export default function CancellationReturns() {
         <div>
             <Header/>
             <div className="min-h-screen bg-gray-50 p-6">
-            {/* Hero Section */}
             <div className="max-w-4xl mx-auto text-center">
                 <h1 className="text-5xl font-bold text-gray-800">Cancellation & Returns</h1>
                 <p className="text-lg text-gray-600 mt-2">
                     Hassle-free cancellations, easy returns, and quick refunds.
                 </p>
             </div>
-
-            {/* Policy Sections */}
             <div className="max-w-5xl mx-auto mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                 {policies.map((item, index) => (
                     <div key={index} className="bg-white p-6 rounded-xl shadow-md flex flex-col items-center text-center">
@@ -61,8 +63,6 @@ export default function CancellationReturns() {
                     </div>
                 ))}
             </div>
-
-            {/* FAQ Section */}
             <div className="max-w-4xl mx-auto mt-16">
                 <h2 className="text-3xl font-semibold text-gray-800 text-center mb-6">Cancellation & Return FAQs</h2>
                 <div className="space-y-4">
@@ -77,8 +77,6 @@ export default function CancellationReturns() {
                     ))}
                 </div>
             </div>
-
-            {/* Support Section */}
             <div className="mt-12 text-center">
                 <h3 className="text-lg text-gray-700">Need Help with Cancellation or Returns?</h3>
                 <a href="/contact-us" className="bg-black text-white px-6 py-3 rounded-lg text-lg font-medium hover:bg-black transition mt-4 inline-block">

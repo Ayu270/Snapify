@@ -49,7 +49,6 @@ export default function Page() {
 
       <Card>
         <CardContent className="p-5 space-y-4">
-          {/* Order Summary */}
           <div className="flex flex-wrap items-center gap-2 text-sm">
             <Badge variant="outline" className="bg-blue-100 text-blue-600 uppercase">
               {order.paymentMode}
@@ -61,8 +60,6 @@ export default function Page() {
               {order.timestampCreate?.toDate()?.toLocaleString()}
             </span>
           </div>
-
-          {/* Products */}
           <div className="space-y-3">
             {order.checkout.line_items.map((product, i) => {
               const unitPrice = product.price_data.unit_amount / 100;
@@ -89,8 +86,6 @@ export default function Page() {
           </div>
         </CardContent>
       </Card>
-
-      {/* Payment Details */}
       <Card>
         <CardContent className="p-5 text-sm space-y-2">
           <h2 className="font-semibold mb-2 text-xl">Payment Details</h2>

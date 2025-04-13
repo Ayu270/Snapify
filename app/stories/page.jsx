@@ -1,7 +1,11 @@
-import Image from "next/image";
 import Link from "next/link";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+
+export const metadata = {
+    title: "Snapify | Stories",
+    description: "Created by Ayush",
+};
 
 const stories = [
     {
@@ -35,15 +39,12 @@ export default function Stories() {
        <div>
           <Header/>
           <div className="min-h-screen bg-gray-50 p-6">
-            {/* Hero Section */}
             <div className="max-w-6xl mx-auto text-center">
                 <h1 className="text-5xl font-bold text-gray-800">Snapify Stories</h1>
                 <p className="text-lg text-gray-600 mt-2">
                     Discover inspiring stories, latest trends, and behind-the-scenes insights.
                 </p>
             </div>
-
-            {/* Stories Grid */}
             <div className="max-w-6xl mx-auto mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                 {stories.map((story, index) => (
                     <Link key={index} href={story.link} className="group">

@@ -2,6 +2,11 @@ import { RefreshCw, CheckCircle, XCircle, Clock, Headset } from "lucide-react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
+export const metadata = {
+    title: "Snapify | Return Policy",
+    description: "Created by Ayush",
+};
+
 const returnPolicyData = [
     { 
         title: "Return Eligibility", 
@@ -32,15 +37,12 @@ export default function ReturnPolicy() {
         <div>
             <Header/>
             <div className="min-h-screen bg-gray-50 p-6">
-            {/* Hero Section */}
             <div className="max-w-4xl mx-auto text-center">
                 <h1 className="text-5xl font-bold text-gray-800">Return Policy</h1>
                 <p className="text-lg text-gray-600 mt-2">
                     Hassle-free returns and easy refunds for eligible purchases.
                 </p>
             </div>
-
-            {/* Policy Sections */}
             <div className="max-w-5xl mx-auto mt-12 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-6">
                 {returnPolicyData.map((item, index) => (
                     <div key={index} className="bg-white p-6 rounded-xl shadow-md flex flex-col items-center text-center">
@@ -58,8 +60,6 @@ export default function ReturnPolicy() {
                     </div>
                 ))}
             </div>
-
-            {/* Support Section */}
             <div className="mt-12 text-center">
                 <h3 className="text-lg text-gray-700">Need Help with Returns?</h3>
                 <a href="/contact-us" className="bg-black text-white px-6 py-3 rounded-lg text-lg font-medium hover:bg-black transition mt-4 inline-block">

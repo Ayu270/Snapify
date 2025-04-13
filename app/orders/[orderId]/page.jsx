@@ -140,8 +140,6 @@ export default function OrderDetails() {
             </div>
           </CardContent>
         </Card>
-
-        {/* Payment Details Section */}
         <div className="bg-gray-100 rounded-md p-4 text-sm text-gray-700 print:hidden">
           <p className="font-semibold mb-2">Payment Details</p>
           <p><span className="font-medium">Payment Mode:</span> <span className="uppercase">{order?.paymentMode}</span></p>

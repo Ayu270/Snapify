@@ -2,6 +2,18 @@ import { ProductCard } from "@/app/components/Products";
 import { getBrand } from "@/lib/firestore/brands/read_server";
 import { getProductsByBrand } from "@/lib/firestore/products/read_server";
 
+export async function generateMetadata({ params }) {
+  const { brandId } = params;
+  const brand = await getBrand({ id: brandId });
+ 
+   return {
+     title: `${brand?.name} | Brand`,
+     openGraph: {
+       images: [brand?.imageURL],
+     },
+   };
+ }
+
 export default async function Page({ params }) {
     const { brandId } = params;
     const brand = await getBrand({ id: brandId });
@@ -12,7 +24,6 @@ export default async function Page({ params }) {
             <div className="w-full flex justify-center">
               <img className="h-[150px]" src={brand?.imageURL} alt="" />
             </div>
-             {/* <h1 className="text-center font-semibold text-4xl p-4">{brand.name}</h1> */}
              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                 {products?.map((item) => {
                 return <ProductCard product={item} key={item?.id} />;

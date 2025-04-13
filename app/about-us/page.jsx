@@ -2,12 +2,16 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import { Users, Target, Globe, Lightbulb } from "lucide-react";
 
+export const metadata = {
+    title: "Snapify | About Us",
+    description: "Created by Ayush",
+};
+
 export default function AboutUs() {
     return (
         <div>
             <Header/>
             <div className="min-h-screen bg-gray-50 flex flex-col items-center p-6">
-            {/* Hero Section */}
             <div className="max-w-4xl text-center">
                 <h1 className="text-5xl font-bold text-gray-800 mb-4">Welcome to Snapify</h1>
                 <p className="text-lg text-gray-600">
@@ -15,8 +19,6 @@ export default function AboutUs() {
                     and high-quality products.
                 </p>
             </div>
-
-            {/* Mission & Vision */}
             <div className="max-w-5xl mt-12 grid grid-cols-1 md:grid-cols-2 gap-6">
                 {[
                     { icon: <Target size={32} className="text-blue-500" />, title: "Our Mission", desc: "To create an effortless shopping experience with quality, affordability, and trust." },
@@ -31,8 +33,6 @@ export default function AboutUs() {
                     </div>
                 ))}
             </div>
-
-            {/* Core Values Section */}
             <div className="max-w-5xl mt-16">
                 <h2 className="text-3xl font-semibold text-gray-800 text-center mb-6">🌟 Our Core Values</h2>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -51,8 +51,6 @@ export default function AboutUs() {
                     ))}
                 </div>
             </div>
-
-            {/* Contact & CTA */}
             <div className="mt-12 text-center">
                 <h3 className="text-lg text-gray-700">Want to know more or partner with us?</h3>
                 <a href="/contact-us" className="bg-black text-white px-6 py-3 rounded-lg text-lg font-medium hover:bg-slate-950 transition mt-4 inline-block">

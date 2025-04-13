@@ -28,41 +28,15 @@ export const getProductsByCategory = async ({ categoryId }) => {
   return list.docs.map((snap) => snap.data());
 }; 
 
-// export const getProductsByBrand = async ({ brandId }) => {
-//   const list = await getDocs(query(collection(db, "products"), orderBy("timestampCreate", "asc"), where("brandId", "==", brandId)));//desc
-//   return list.docs.map((snap) => snap.data());
-// }; 
-
 
 export const getProductssByCategory = async ({ categoryId }) => {
     const list = await getDocs(query(collection(db, "products"), orderBy("timestampCreate", "asc"), where("categoryId", "==", categoryId)));//desc
     const products = list.docs.map((snap) => snap.data());
 
-  // Shuffle the products array and pick the first 4
   const shuffledProducts = products.sort(() => 0.5 - Math.random()).slice(0, 4);
 
   return shuffledProducts;
   }; 
-
-
-
-// export const getProductsByCategory = async ({ categoryId }) => {
-//   const list = await getDocs(
-//     query(
-//       collection(db, "products"),
-//       where("categoryId", "==", categoryId)
-//     )
-//   );
-
-//   const products = list.docs.map((snap) => snap.data());
-
-//   // Shuffle the products array and pick the first 4
-//   const shuffledProducts = products.sort(() => 0.5 - Math.random()).slice(0, 4);
-
-//   return shuffledProducts;
-// };
-
-
 
 export const getProductsByBrand = async ({ brandId }) => {
   if (!brandId) {
@@ -72,8 +46,8 @@ export const getProductsByBrand = async ({ brandId }) => {
 
   const q = query(
     collection(db, "products"), 
-    where("brandId", "==", brandId),  // where() should come first
-    orderBy("timestampCreate", "asc") // orderBy() should come after where()
+    where("brandId", "==", brandId),  
+    orderBy("timestampCreate", "asc") 
   );
 
   const list = await getDocs(q);
