@@ -64,13 +64,6 @@ export default function TermsOfUse() {
                         continued use of our services implies acceptance of the updated terms.
                     </p>
                 </div>
-                <div>
-                    <h2 className="text-2xl font-semibold mb-2">7. Contact Information</h2>
-                    <p className="text-md">
-                        If you have any questions regarding these Terms of Use, please contact us at 
-                        <a href="mailto:support@snapify.com" className="text-blue-600 hover:underline"> support@snapify.com</a>.
-                    </p>
-                </div>
             </div>
             <div className="mt-12 text-center">
                 <h3 className="text-lg text-gray-700">Need Help?</h3>

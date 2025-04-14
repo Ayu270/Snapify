@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 
@@ -68,8 +69,7 @@ export default function TermsAndConditions() {
                 <section>
                     <h2 className="text-xl font-semibold text-gray-800">Need Assistance?</h2>
                     <p className="text-gray-600 text-sm mt-1">
-                        If you have any questions regarding these Terms, contact us at 
-                        <a href="mailto:support@snapify.com" className="text-blue-600 hover:underline"> support@snapify.com</a>.
+                        If you have any questions regarding these Terms, <Link href="/contact-us"><span className="hover:underline text-blue-500">Contact Us</span></Link>
                     </p>
                 </section>
             </div>

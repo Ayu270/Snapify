@@ -1,6 +1,7 @@
 import { ShieldCheck, Lock, UserCheck, AlertTriangle, Globe, CheckCircle } from "lucide-react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import Link from "next/link";
 
 export const metadata = {
     title: "Snapify | Security",
@@ -65,8 +66,7 @@ export default function Security() {
             <div className="max-w-4xl mx-auto text-center mt-12">
                 <h2 className="text-xl font-semibold text-gray-800">Need Help?</h2>
                 <p className="text-gray-600 mt-1">
-                    If you notice any suspicious activity or security concerns, contact us at
-                    <a href="mailto:security@snapify.com" className="text-blue-600 hover:underline"> security@snapify.com</a>.
+                    If you notice any suspicious activity or security concerns, <Link href="/contact-us"><span className="hover:underline text-blue-500">Contact Us</span></Link>
                 </p>
             </div>
             </div>
