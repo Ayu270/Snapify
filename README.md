@@ -1,6 +1,6 @@
 # Snapify - Full Stack E-Commerce Website
 
-This is a Full Stack E-Commerce Website built with **Next.js 14**, **Tailwind CSS**, **Firebase**, **Stripe**, **Rsend**, and **Algolia**.
+This is a Full Stack E-Commerce Website built with **Next.js 15**, **Tailwind CSS**, **Firebase**, **Stripe**, **Rsend**, and **Algolia**.
 
 ## Features
 
@@ -12,10 +12,12 @@ This is a Full Stack E-Commerce Website built with **Next.js 14**, **Tailwind CS
 
 ## Technologies Used
 
-- **Frontend**: Next.js 14, Tailwind CSS
+- **Frontend**: Next.js 15, Tailwind CSS
 - **Backend**: Firebase (Firestore, Authentication)
 - **Payment**: Stripe
 - **Search**: Algolia
+- **Contact Us**: Resend
+
 
 ## Installation
 
@@ -46,6 +48,8 @@ This is a Full Stack E-Commerce Website built with **Next.js 14**, **Tailwind CS
    NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID=""
    
    NEXT_PUBLIC_DOMAIN=""
+
+   NEXT_PUBLIC_RESEND_API_KEY=""
    
    NEXT_PUBLIC_ALGOLIA_APP_ID=""
    NEXT_PUBLIC_ALGOLIA_APP_KEY=""
