@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { FaInstagram, FaYoutube, FaGithub } from "react-icons/fa";
+import { FaInstagram, FaYoutube, FaGithub, FaLinkedin } from "react-icons/fa";
 import { PiXLogoDuotone } from "react-icons/pi";
 import { Phone, Mail, MapPin } from "lucide-react";
 
@@ -38,8 +38,7 @@ export default function Footer() {
                     <h2 className="font-bold mb-3">SOCIAL</h2>
                     <div className="flex space-x-4 text-lg">
                         <Link href="https://github.com/Ayu270"><FaGithub /></Link>
-                        <Link href="https://x.com/_ayush27"><PiXLogoDuotone /></Link>
-                        <Link href="https://www.instagram.com/krayush27/"><FaInstagram /></Link>
+                        <Link href="https://www.linkedin.com/in/kumar-ayush-xe"><FaLinkedin /></Link>
                         <Link href="https://www.youtube.com/@ayush_27"><FaYoutube /></Link>
                     </div>
                 </div>
