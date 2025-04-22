@@ -63,85 +63,67 @@ function RatingReview({ product }) {
     );
 }
 
-
-
-
-import { doc, onSnapshot } from "firebase/firestore";
-import { db } from "@/lib/firebase";
-
-
-
 export function ProductCard({ product }) {
-  const [liveProduct, setLiveProduct] = useState(product);
+    const isOutOfStock = product?.stock <= (product?.orders ?? 0);
 
-  useEffect(() => {
-    const unsub = onSnapshot(doc(db, "products", product.id), (docSnap) => {
-      if (docSnap.exists()) {
-        setLiveProduct({ id: docSnap.id, ...docSnap.data() });
-      }
-    });
+    const handleOutOfStockClick = () => {
+        if (isOutOfStock) {
+             //toast.error("This product is currently out of stock.");
+        }
+    };
 
-    return () => unsub();
-  }, [product.id]);
-
-  const isOutOfStock =
-    Number(liveProduct?.stock ?? 0) <= Number(liveProduct?.orders ?? 0);
-
-  return (
-    <Card className="overflow-hidden shadow-md rounded-xl">
-      <div className="relative w-full h-56">
-        <Link href={`/products/${liveProduct.id}`}>
-          <img
-            src={liveProduct.featureImageURL}
-            className="w-full h-full object-cover object-center"
-            alt={liveProduct.title}
-          />
-        </Link>
-        <div className="absolute top-2 right-2">
-          <AuthContextProvider>
-            <FavoriteButton productId={liveProduct.id} />
-          </AuthContextProvider>
-        </div>
-      </div>
-
-      <CardContent className="p-4 flex flex-col gap-3">
-        <Link href={`/products/${liveProduct.id}`}>
-          <h1 className="text-lg font-semibold line-clamp-2">{liveProduct.title}</h1>
-        </Link>
-        <p className="text-sm text-gray-500 line-clamp-2">{liveProduct.shortDesription}</p>
-
-        <div className="flex items-center justify-between">
-          <h2 className="text-green-600 font-bold">
-            ₹ {liveProduct.salePrice}{" "}
-            <span className="text-xs text-gray-400 line-through">₹ {liveProduct.price}</span>
-          </h2>
-          <div className="flex items-center gap-1">
-               <RatingReview product={product} />
-          </div>
-        </div>
-
-        <div className="flex gap-3 mt-2">
-          <div className="w-full">
-            {isOutOfStock ? (
-              <button
-                disabled
-                className="w-full bg-red-100 text-red-500 text-xs md:text-sm px-4 py-2 md:py-1.5 rounded-lg cursor-not-allowed"
-              >
-                Out of Stock
-              </button>
-            ) : (
-              <Link href={`/checkout?type=buynow&productId=${liveProduct.id}`}>
-                <button className="w-full bg-black text-white text-xs md:text-sm px-4 py-2 md:py-1.5 rounded-lg">
-                  Buy Now
-                </button>
-              </Link>
-            )}
-          </div>
-          <AuthContextProvider>
-            <AddToCartButton productId={liveProduct.id} isDisabled={isOutOfStock} />
-          </AuthContextProvider>
-        </div>
-      </CardContent>
-    </Card>
-  );
+    return (
+        <Card className="overflow-hidden shadow-md rounded-xl">
+            <div className="relative w-full h-56">
+                <Link href={`/products/${product?.id}`}>
+                    <img src={product?.featureImageURL} className="w-full h-full object-cover object-center" alt={product?.title} />
+                </Link>
+                <div className="absolute top-2 right-2 ">
+                    <AuthContextProvider>
+                        <FavoriteButton productId={product?.id} />
+                    </AuthContextProvider>
+                </div>
+            </div>
+            <CardContent className="p-4 flex flex-col gap-3">
+                <Link href={`/products/${product?.id}`}>
+                    <h1 className="text-lg font-semibold line-clamp-2">{product?.title}</h1>
+                </Link>
+                <p className="text-sm text-gray-500 line-clamp-2">{product?.shortDesription}</p>
+                <div className="flex items-center justify-between">
+                    <h2 className="text-green-600 font-bold">
+                        ₹ {product?.salePrice} <span className="text-xs text-gray-400 line-through">₹ {product?.price}</span>
+                    </h2>
+                    <div className="flex items-center gap-1">
+                        <RatingReview product={product} />
+                    </div>
+                </div>
+                <div className="flex gap-3 mt-2">
+                    <div className="w-full">
+                        {isOutOfStock ? (
+                            <button
+                                disabled
+                                className="w-full bg-red-100 text-red-500 text-xs md:text-sm px-4 py-2 md:py-1.5 rounded-lg cursor-not-allowed"
+                            >
+                                Out of Stock
+                            </button>
+                        ) : (
+                            <Link href={`/checkout?type=buynow&productId=${product?.id}`}>
+                                <button className="w-full bg-black text-white text-xs md:text-sm px-4 py-2 md:py-1.5 rounded-lg">
+                                    Buy Now
+                                </button>
+                            </Link>
+                        )}
+                    </div>
+                    <div className="" onClick={handleOutOfStockClick}>
+                        <AuthContextProvider>
+                            <AddToCartButton
+                              productId={product?.id}
+                              isDisabled={isOutOfStock}
+                            />
+                        </AuthContextProvider>
+                    </div>
+                </div>
+            </CardContent>
+        </Card>
+    );
 }
