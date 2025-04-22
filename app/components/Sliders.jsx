@@ -1,5 +1,9 @@
 "use client";
 
+import { useEffect, useState } from "react";
+import { doc, onSnapshot } from "firebase/firestore";
+import { db } from "@/lib/firebase";
+
 import AuthContextProvider from "@/contexts/AuthContext";
 import Link from "next/link";
 import Slider from "react-slick";
@@ -7,7 +11,28 @@ import FavoriteButton from "./FavoriteButton";
 import AddToCartButton from "./AddToCartButton";
 
 export default function FeaturedProductSlider({ featuredProducts }) {
-  var settings = {
+  const [liveProducts, setLiveProducts] = useState(featuredProducts);
+
+  useEffect(() => {
+    const unsubscribers = featuredProducts?.map((product, index) => {
+      return onSnapshot(doc(db, "products", product.id), (docSnap) => {
+        if (docSnap.exists()) {
+          const updatedProduct = { id: docSnap.id, ...docSnap.data() };
+          setLiveProducts((prev) => {
+            const newProducts = [...prev];
+            newProducts[index] = updatedProduct;
+            return newProducts;
+          });
+        }
+      });
+    });
+
+    return () => {
+      unsubscribers?.forEach((unsub) => unsub && unsub());
+    };
+  }, [featuredProducts]);
+
+  const settings = {
     dots: true,
     infinite: true,
     slidesToShow: 1,
@@ -20,8 +45,9 @@ export default function FeaturedProductSlider({ featuredProducts }) {
   return (
     <div className="overflow-hidden">
       <Slider {...settings}>
-        {featuredProducts?.map((product) => {
-          const isOutOfStock = product?.stock <= (product?.orders ?? 0);
+        {liveProducts?.map((product) => {
+          const isOutOfStock =
+            Number(product?.stock ?? 0) <= Number(product?.orders ?? 0);
 
           return (
             <div key={product?.id}>
@@ -33,7 +59,9 @@ export default function FeaturedProductSlider({ featuredProducts }) {
                       <h1 className="md:text-4xl text-xl font-semibold">{product?.title}</h1>
                     </Link>
                     <Link href={`/products/${product?.id}`}>
-                      <h1 className="text-gray-600 md:text-sm text-xs max-w-96 line-clamp-2">{product?.shortDesription}</h1>
+                      <h1 className="text-gray-600 md:text-sm text-xs max-w-96 line-clamp-2">
+                        {product?.shortDesription}
+                      </h1>
                     </Link>
                   </div>
                   <div className="flex items-center gap-4">
@@ -63,7 +91,11 @@ export default function FeaturedProductSlider({ featuredProducts }) {
                 </div>
                 <div>
                   <Link href={`/products/${product?.id}`}>
-                    <img className="h-[14rem] md:h-[23rem]" src={product?.featureImageURL} alt="" />
+                    <img
+                      className="h-[14rem] md:h-[23rem]"
+                      src={product?.featureImageURL}
+                      alt={product?.title}
+                    />
                   </Link>
                 </div>
               </div>
