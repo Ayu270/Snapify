@@ -2,6 +2,14 @@
 
 This is a Full Stack E-Commerce Website built with **Next.js 15**, **Tailwind CSS**, **Firebase**, **Stripe**, **Rsend**, and **Algolia**.
 
+## Demo Video
+
+Click the image below to watch the demo video:
+
+<a href="https://youtu.be/2y6Qi9ln0yw" target="_blank">
+    <img src="https://img.youtube.com/vi/2y6Qi9ln0yw/maxresdefault.jpg" alt="Watch the video" width="750"/>
+</a>
+
 ## Features
 
 - User authentication with Firebase
@@ -70,6 +78,10 @@ service cloud.firestore {
     
     function isAdmin() {
       return exists(/databases/$(database)/documents/admins/$(request.auth.token.email));
+    }
+
+    match /{document=**}/reviews/{reviewId} {
+      allow read: if isAdmin();
     }
 
     match /admins/{id} {
@@ -147,12 +159,88 @@ service firebase.storage {
 
 You can explore the demo of the e-commerce website at [this link](https://snapiify.vercel.app). 
 
-To access the Admin Panel, use the following credentials:
+To access the Admin Panel, [Contact Us](https://snapiify.vercel.app/contact-us).
 
-- **Email**: 
-- **Password**: 
+## Repository Structure
 
-(Note: This demo admin account has read and write permissions disabled for security purposes.)
+```bash
+Snapify/
+│
+📦 app/
+├── layout.js                           # Main app layout (Next.js App Router)
+├── (auth)/                             # Auth Module (Login, Signup, Reset Password)
+│   ├── layout.jsx
+│   ├── login/page.jsx
+│   ├── sign-up/page.jsx
+│   └── forget-password/page.jsx
+├── (checkout)/                         # Checkout Flow (Stripe & Firestore)
+│   ├── checkout-cod/page.jsx
+│   ├── checkout-failed/page.jsx
+│   ├── checkout-success/page.jsx
+│   └── checkout-success/components/SuccessMessage.jsx
+├── (pages)/                            # Product Browsing & Search (Algolia)
+│   ├── search/page.jsx
+│   ├── search/components/SearchBox.jsx
+│   ├── brands/[brandId]/page.jsx
+│   ├── categories/[categoryId]/page.jsx
+│   ├── collections/[collectionId]/page.jsx
+│   └── products/[productId]/page.jsx
+├── (user)/                             # User Area (Account, Cart, Favorites)
+│   ├── layout.jsx
+│   ├── account/page.jsx
+│   ├── cart/page.jsx
+│   ├── favorites/page.jsx
+│   └── checkout/
+│       ├── layout.jsx
+│       ├── page.jsx
+│       └── components/Checkout.jsx
+├── admin/                              # Admin Management Panel
+│   ├── layout.jsx
+│   ├── page.jsx
+│   ├── customers/, products/, orders/, brands/, categories/, collections/, reviews/, admins/
+│   │   ├── page.jsx
+│   │   ├── form/page.jsx (if applicable)
+│   │   ├── components/
+│   │   │   ├── ListView.jsx
+│   │   │   └── Form.jsx / ChangeStatus.jsx
+│   └── components/
+│       ├── AdminLayout.jsx
+│       ├── Header.jsx
+│       ├── Sidebar.jsx
+│       ├── CountMeter.jsx
+│       ├── OrdersChart.jsx
+│       └── RevenueChart.jsx
+├── about-us/page.jsx                   # Static & Info Pages
+├── contact-us/page.jsx
+├── faq/page.jsx
+└── privacy/page.jsx
+
+📦 app/api/
+└── contact/route.js                    # Edge API - Contact Form
+
+📦 components/
+└── ui/                                 # Design System UI Components
+    ├── badge.jsx
+    ├── button.jsx
+    ├── card.jsx
+    └── skeleton.jsx
+└── AddToCartButton.jsx, Header.jsx, Footer.jsx, etc.
+
+📦 contexts/
+└── AuthContext.jsx                     # Global Auth Context Provider
+
+📦 lib/
+├── firebase.jsx                        # Firebase Client SDK
+├── firebase_admin.jsx                  # Firebase Admin SDK
+├── utils.js                            # Common Utility Functions
+└── firestore/                          # Firestore Access Layer (BaaS)
+    ├── user/, products/, orders/, checkout/
+    └── brands/, categories/, collections/, reviews/, admins/
+
+📄 next.config.mjs                      # Next.js Configuration
+📄 tailwind.config.mjs                  # Tailwind CSS Config
+📄 jsconfig.json                        # Path Aliases
+```
 
 ## Conclusion
 
